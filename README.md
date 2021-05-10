@@ -1,9 +1,9 @@
 # HP 3478A Control and Data Logging Software
  This software allows you to control and log data from the HP 3478A multimeter via an AR488 Arduino GPIB Adapter. This software supports Window 10, 8, and 7.
 
-#### [Download](https://github.com/Niravk1997/DC-Power-Efficiency-Measurement-Software/releases)
+#### [Download](https://github.com/Niravk1997/HP-3478A-Software/releases)
 
-#### [User Manual](https://github.com/Niravk1997/DC-Power-Efficiency-Measurement-Software/releases)
+#### [User Manual](https://github.com/Niravk1997/HP-3478A-Software/blob/main/User%20Manual/HP%203478A%20Software%20User%20Manual.pdf)
 
 #### [AR488 Adapter](https://github.com/Twilight-Logic/AR488)
 
