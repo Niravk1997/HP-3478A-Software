@@ -23,20 +23,20 @@
 - Capture up to 107 measurement samples in 2 seconds. The fastest sample capture speed compared to any other HP 3478A GUI software.
 
 ##### The main software window
-![HP 3478A Software](C:\Users\nirav\Documents\GitHub\HP-3478A-Software\Images\HP 3478A Software.gif)
+![HP 3478A Software](https://github.com/Niravk1997/HP-3478A-Software/blob/main/Images/HP%203478A%20Software.gif)
 
 
 ##### Interactive Graphing Module
-![HP 3478A Graph Module](C:\Users\nirav\Documents\GitHub\HP-3478A-Software\Images\Graph Module.gif)
+![HP 3478A Graph Module](https://github.com/Niravk1997/HP-3478A-Software/blob/main/Images/Graph%20Module.gif)
 
 ##### Create Math Waveform
-![HP 3478A Math Wavform](C:\Users\nirav\Documents\GitHub\HP-3478A-Software\Images\Math Waveform.gif)
+![HP 3478A Math Wavform](https://github.com/Niravk1997/HP-3478A-Software/blob/main/Images/Math%20Waveform.gif)
 
 ##### Histogram Waveform
-![HP 3478A Histogram](C:\Users\nirav\Documents\GitHub\HP-3478A-Software\Images\Histogram.gif)
+![HP 3478A Histogram](https://github.com/Niravk1997/HP-3478A-Software/blob/main/Images/Histogram.gif)
 
 ##### Measurement Table
-![HP 3478A Table](C:\Users\nirav\Documents\GitHub\HP-3478A-Software\Images\Table.gif)
+![HP 3478A Table](https://github.com/Niravk1997/HP-3478A-Software/blob/main/Images/Table.gif)
 
 ##### How to Connect:
-![HP 3478A Connect](C:\Users\nirav\Documents\GitHub\HP-3478A-Software\Images\How to Connect.gif)
+![HP 3478A Connect](https://github.com/Niravk1997/HP-3478A-Software/blob/main/Images/How%20to%20Connect.gif)
