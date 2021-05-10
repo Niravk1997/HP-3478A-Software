@@ -23,11 +23,10 @@
 - Capture up to 107 measurement samples in 2 seconds. The fastest sample capture speed compared to any other HP 3478A GUI software.
 
 ##### The main software window
-![HP 3478A Software](https://github.com/Niravk1997/HP-3478A-Software/blob/main/Images/HP%203478A%20Software.gif)
-
+![HP 3478A Software](Images/Graph Module.gif)
 
 ##### Interactive Graphing Module
-![HP 3478A Graph Module](https://github.com/Niravk1997/HP-3478A-Software/blob/main/Images/Graph%20Module.gif)
+![HP 3478A Graph Module](https://raw.githubusercontent.com/Niravk1997/HP-3478A-Software/5b3caefe67485770ffe28f6b4d3eb256b44c01a6/Images/Graph%20Module.gif?token=AMREYPE2XHDT5J3LIZTDB4LATDUT4)
 
 ##### Create Math Waveform
 ![HP 3478A Math Wavform](https://github.com/Niravk1997/HP-3478A-Software/blob/main/Images/Math%20Waveform.gif)
