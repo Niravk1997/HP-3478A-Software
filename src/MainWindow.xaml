@@ -13,9 +13,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition Height="130"/> 
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="85"/>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="93"/>
+            <RowDefinition Height="78"/>
             <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="25"/>
@@ -843,7 +843,7 @@
         <Grid Grid.Row="5" Grid.Column="0" Margin="5,0,5,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="215"/>
+                <ColumnDefinition Width="212"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -856,7 +856,7 @@
                     <TabItem Header="Continuous" IsSelected="False">
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
                             <Label Content="Voice Measurement every"/>
-                            <TextBox x:Name="Speech_Continuous_Value" Text="" MinWidth="50" MaxWidth="50" Height="22" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="Speech_Continuous_Value" Text="" MinWidth="45" MaxWidth="45" Height="22" VerticalContentAlignment="Center"/>
                             <Label Content="minutes."/>
                             <Border x:Name="Speech_Continuous_Set_Border" BorderThickness="2" BorderBrush="White" Margin="5,0,0,0">
                                 <Button x:Name="Speech_Continuous_Set_Button" Content="Set" Width="45" BorderThickness="0" Click="Speech_Continuous_Set_Button_Click"/>

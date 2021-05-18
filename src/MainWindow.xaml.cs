@@ -19,6 +19,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Speech.Synthesis;
 using System.Windows.Threading;
+using System.Globalization;
 
 namespace HP_3478A
 {
@@ -573,7 +574,7 @@ namespace HP_3478A
                 try
                 {
                     string measurement = measurements.Take();
-                    decimal value = decimal.Parse(measurement, System.Globalization.NumberStyles.Float);
+                    decimal value = decimal.Parse(measurement, NumberStyles.Float, CultureInfo.InvariantCulture);
                     DisplayData(measurement, value);
                     Display_MIN_MAX_AVG(value);
                     setContinuousVoiceMeasurement(value);

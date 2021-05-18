@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -165,7 +166,7 @@ namespace HP_3478A
                 try
                 {
                     string[] Data_Dequeue = Data_Queue.Take().Split(',');
-                    bool isValidMeasurement = double.TryParse(Data_Dequeue[1], out double Measurement);
+                    bool isValidMeasurement = double.TryParse(Data_Dequeue[1], NumberStyles.Float, CultureInfo.InvariantCulture, out double Measurement);
 
                     if (isValidMeasurement == true)
                     {

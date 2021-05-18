@@ -1,0 +1,36 @@
+C:\Users\nirav\source\repos\HP 3478A\bin\Debug\HP 3478A.exe.config
+C:\Users\nirav\source\repos\HP 3478A\bin\Debug\HP 3478A.exe
+C:\Users\nirav\source\repos\HP 3478A\bin\Debug\HP 3478A.pdb
+C:\Users\nirav\source\repos\HP 3478A\bin\Debug\MathNet.Numerics.dll
+C:\Users\nirav\source\repos\HP 3478A\bin\Debug\Ookii.Dialogs.Wpf.dll
+C:\Users\nirav\source\repos\HP 3478A\bin\Debug\ScottPlot.dll
+C:\Users\nirav\source\repos\HP 3478A\bin\Debug\ScottPlot.WPF.dll
+C:\Users\nirav\source\repos\HP 3478A\bin\Debug\System.Drawing.Common.dll
+C:\Users\nirav\source\repos\HP 3478A\bin\Debug\System.ValueTuple.dll
+C:\Users\nirav\source\repos\HP 3478A\bin\Debug\MathNet.Numerics.xml
+C:\Users\nirav\source\repos\HP 3478A\bin\Debug\Ookii.Dialogs.Wpf.pdb
+C:\Users\nirav\source\repos\HP 3478A\bin\Debug\Ookii.Dialogs.Wpf.xml
+C:\Users\nirav\source\repos\HP 3478A\bin\Debug\ScottPlot.xml
+C:\Users\nirav\source\repos\HP 3478A\bin\Debug\System.ValueTuple.xml
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\COM_Select_Window.g.cs
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\Graphing_Window.g.cs
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\Histogram_Waveform.g.cs
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\MainWindow.g.cs
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\Math_Waveform.g.cs
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\Measurement_Table.g.cs
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\App.g.cs
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\HP 3478A_MarkupCompile.cache
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\HP 3478A_MarkupCompile.lref
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\COM_Select_Window.baml
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\Graphing_Window.baml
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\Histogram_Waveform.baml
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\MainWindow.baml
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\Math_Waveform.baml
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\Measurement_Table.baml
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\HP 3478A.g.resources
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\HP_3478A.Properties.Resources.resources
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\HP 3478A.csproj.GenerateResource.cache
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\HP 3478A.csproj.CoreCompileInputs.cache
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\HP 3478A.csproj.CopyComplete
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\HP 3478A.exe
+C:\Users\nirav\source\repos\HP 3478A\obj\Debug\HP 3478A.pdb

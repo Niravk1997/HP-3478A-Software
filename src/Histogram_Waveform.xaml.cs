@@ -44,17 +44,21 @@ namespace HP_3478A
             minValue = this.Measurement_Data.Minimum();
             Graph.Plot.Title(Graph_Title);
 
-            Add_Histogram(X_Axis_Label, BinSize, Red, Green, Blue, BarWidth, BarBorder, Curve);
+            Add_Histogram(X_Axis_Label, BinSize, Red, Green, Blue, BarWidth, BarBorder, Curve, Measurement_Count, maxValue, minValue);
 
             Start_Sample_Label.Content = Start_Sample;
             End_Sample_Label.Content = End_Sample;
             BinSize_Label.Content = BinSize;
         }
 
-        private void Add_Histogram(string X_Axis_Label, double BinSize, int Red, int Green, int Blue, double BarWidth, float BarBorder, bool Curve) 
+        private void Add_Histogram(string X_Axis_Label, double BinSize, int Red, int Green, int Blue, double BarWidth, float BarBorder, bool Curve, int Measurement_Count, double maxValue, double minValue) 
         {
             try
             {
+                if (BinSize == 0)
+                {
+                    BinSize = ((maxValue) - (minValue)) / (Math.Sqrt(Measurement_Count));
+                }
                 var Histogram = new ScottPlot.Statistics.Histogram(Measurement_Data, min: minValue, max: maxValue, binSize: BinSize);
                 var Histogram_Plot = Graph.Plot.AddBar(Histogram.counts, Histogram.bins, color: System.Drawing.Color.FromArgb(Red, Green, Blue));
 

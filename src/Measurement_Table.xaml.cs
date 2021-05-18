@@ -3,6 +3,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -85,7 +86,7 @@ namespace HP_3478A
                 {
                     string[] Data_Dequeue = Table_Data_Queue.Take().Split(',');
                     ++Measurement_Counter;
-                    Measurement_Data.Add(new MeasurementData(Measurement_Counter, Data_Dequeue[0], ((decimal)double.Parse(Data_Dequeue[1])).ToString(), Data_Dequeue[2]));
+                    Measurement_Data.Add(new MeasurementData(Measurement_Counter, Data_Dequeue[0], ((decimal)double.Parse(Data_Dequeue[1], NumberStyles.Float, CultureInfo.InvariantCulture)).ToString(), Data_Dequeue[2]));
                     Total_Measurement_Counter.Content = Measurement_Counter;
                 }
             }

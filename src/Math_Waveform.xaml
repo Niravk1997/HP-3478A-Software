@@ -12,7 +12,7 @@
             <RowDefinition Height="22"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="2"/>
-            <RowDefinition Height="110" MinHeight="10"/>
+            <RowDefinition Height="120" MinHeight="10"/>
         </Grid.RowDefinitions>
         <Menu Grid.Row="0" IsMainMenu="True" VerticalAlignment="Stretch" FontSize="15">
             <MenuItem Header="File" IsCheckable="False" IsChecked="False">
@@ -956,7 +956,7 @@
                             <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical">
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                                     <Label FontSize="13" Padding="0" Content="Bin Size: "/>
-                                    <TextBox x:Name="BinSize_TextBox_Histogram_NSamples" FontSize="13" Padding="-1" Margin="0,1,0,0" HorizontalContentAlignment="Center" Width="50" Text="0.1"/>
+                                    <TextBox x:Name="BinSize_TextBox_Histogram_NSamples" FontSize="13" Padding="-1" Margin="0,1,0,0" HorizontalContentAlignment="Center" Width="50" Text="0"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                                     <Label FontSize="13" Padding="0" Content="Bar Width: "/>
