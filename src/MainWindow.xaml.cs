@@ -879,7 +879,7 @@ namespace HP_3478A
                 }
                 else if (NDigit4 == true)
                 {
-                    data = data.Remove(6, 1);
+                    data = data.Remove(7, 1);
                     measurements.Add(data);
                 }
                 else
