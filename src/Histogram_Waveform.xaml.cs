@@ -59,7 +59,7 @@ namespace HP_3478A
                 {
                     BinSize = ((maxValue) - (minValue)) / (Math.Sqrt(Measurement_Count));
                 }
-                var Histogram = new ScottPlot.Statistics.Histogram(Measurement_Data, min: minValue, max: maxValue, binSize: BinSize);
+                var Histogram = new ScottPlot.Statistics.Histogram(Measurement_Data, binSize: BinSize);
                 var Histogram_Plot = Graph.Plot.AddBar(Histogram.counts, Histogram.bins, color: System.Drawing.Color.FromArgb(Red, Green, Blue));
 
                 if (BarWidth == 0)

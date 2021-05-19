@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -4526,6 +4527,8 @@ namespace HP_3478A
                 Calculate_Waveform.Closed += (sender2, e2) => Calculate_Waveform.Dispatcher.InvokeShutdown();
                 Dispatcher.Run();
             }));
+                Waveform_Thread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-US");
+                Waveform_Thread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en-US");
                 Waveform_Thread.SetApartmentState(ApartmentState.STA);
                 Waveform_Thread.IsBackground = true;
                 Waveform_Thread.Start();
@@ -4549,6 +4552,8 @@ namespace HP_3478A
                     Dispatcher.Run();
 
                 }));
+                Waveform_Thread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-US");
+                Waveform_Thread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en-US");
                 Waveform_Thread.SetApartmentState(ApartmentState.STA);
                 Waveform_Thread.IsBackground = true;
                 Waveform_Thread.Start();

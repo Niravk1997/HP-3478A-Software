@@ -166,7 +166,7 @@ namespace HP_3478A
                 try
                 {
                     string[] Data_Dequeue = Data_Queue.Take().Split(',');
-                    bool isValidMeasurement = double.TryParse(Data_Dequeue[1], NumberStyles.Float, CultureInfo.InvariantCulture, out double Measurement);
+                    bool isValidMeasurement = double.TryParse(Data_Dequeue[1], out double Measurement);
 
                     if (isValidMeasurement == true)
                     {
@@ -5053,6 +5053,8 @@ namespace HP_3478A
                     Calculate_Waveform.Closed += (sender2, e2) => Calculate_Waveform.Dispatcher.InvokeShutdown();
                     Dispatcher.Run();
                 }));
+                Waveform_Thread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-US");
+                Waveform_Thread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en-US");
                 Waveform_Thread.SetApartmentState(ApartmentState.STA);
                 Waveform_Thread.IsBackground = true;
                 Waveform_Thread.Start();
@@ -5077,6 +5079,8 @@ namespace HP_3478A
                     Dispatcher.Run();
 
                 }));
+                Waveform_Thread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-US");
+                Waveform_Thread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en-US");
                 Waveform_Thread.SetApartmentState(ApartmentState.STA);
                 Waveform_Thread.IsBackground = true;
                 Waveform_Thread.Start();

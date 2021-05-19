@@ -161,6 +161,13 @@ namespace HP_3478A
         public MainWindow()
         {
             InitializeComponent();
+            if (Thread.CurrentThread.CurrentCulture.Name != "en-US")
+            {
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-US");
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en-US");
+                insert_Log("Culture set to en-US, decimal numbers will use dot as the seperator.", 0);
+                insert_Log("Write decimal values with a dot as a seperator, not a comma.", 2);
+            }
             Create_GetDataTimer();
             General_Timer();
             SetupSpeechSythesis();
@@ -574,7 +581,7 @@ namespace HP_3478A
                 try
                 {
                     string measurement = measurements.Take();
-                    decimal value = decimal.Parse(measurement, NumberStyles.Float, CultureInfo.InvariantCulture);
+                    decimal value = decimal.Parse(measurement, NumberStyles.Float);
                     DisplayData(measurement, value);
                     Display_MIN_MAX_AVG(value);
                     setContinuousVoiceMeasurement(value);
@@ -1408,6 +1415,8 @@ namespace HP_3478A
                     HP3478A_Graph_Window.Closed += Close_Graph_Event;
                     Dispatcher.Run();
                 }));
+                Waveform_Thread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-US");
+                Waveform_Thread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en-US");
                 Waveform_Thread.SetApartmentState(ApartmentState.STA);
                 Waveform_Thread.IsBackground = true;
                 Waveform_Thread.Start();
@@ -1516,6 +1525,8 @@ namespace HP_3478A
                     HP3478A_Table.Closed += Close_Table_Event;
                     Dispatcher.Run();
                 }));
+                Table_Thread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-US");
+                Table_Thread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en-US");
                 Table_Thread.SetApartmentState(ApartmentState.STA);
                 Table_Thread.IsBackground = true;
                 Table_Thread.Start();
@@ -3797,8 +3808,20 @@ namespace HP_3478A
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            DataTimer.Stop();
-            DataTimer.Dispose();
+            try
+            {
+                DataTimer.Stop();
+                DataTimer.Dispose();
+                if (Serial_COM_Info.isChanged == true)
+                {
+                    HP3478A.Close();
+                    HP3478A.Dispose();
+                }
+            }
+            catch (Exception) 
+            {
+                
+            }
         }
 
         private void Old_LCD_Click(object sender, RoutedEventArgs e)
