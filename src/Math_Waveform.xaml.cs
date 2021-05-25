@@ -3513,6 +3513,167 @@ namespace HP_3478A
             }
         }
 
+        private void Percentage_Error_Button_AllSamples_Click(object sender, RoutedEventArgs e)
+        {
+            (bool isValid, double Value) = Text_Num(Percentage_Error_TextBox_AllSamples.Text, true, false);
+            (bool isValidGraphColor, int Value_Red, int Value_Green, int Value_Blue) = GraphColor_Math_AllSamples_Check();
+            if (isValid == true & isValidGraphColor == true)
+            {
+                if (Value != 0)
+                {
+                    string Graph_Title = GraphTitle_TextBox_Math_AllSamples.Text;
+                    string Y_Axis_Title = YAxis_TextBox_Math_AllSamples.Text;
+                    Task.Run(() =>
+                    {
+                        try
+                        {
+                            int Measurement_Count_Copy = Measurement_Count;
+                            double[] Measurement_Data_Copy = new double[Measurement_Count_Copy];
+                            Array.Copy(Measurement_Data, Measurement_Data_Copy, Measurement_Count_Copy);
+
+                            DateTime[] Measurement_Data_DateTime = new DateTime[Measurement_Count_Copy];
+                            Array.Copy(Measurement_DateTime, Measurement_Data_DateTime, Measurement_Count_Copy);
+
+                            for (int i = 0; i < Measurement_Count_Copy; i++)
+                            {
+                                Measurement_Data_Copy[i] = Math.Abs((Measurement_Data_Copy[i] - Value) / Value) * 100;
+                            }
+                            Create_Waveform_Window("% Error Math Waveform [All Samples]: |(Samples - " + Value + ") / " + Value + "| x 100", Value, 0, Measurement_Count_Copy, Graph_Title, Y_Axis_Title, Value_Red, Value_Green, Value_Blue, Measurement_Data_Copy, Measurement_Count_Copy, Measurement_Data_DateTime);
+                            Measurement_Data_Copy = null;
+                            Measurement_Data_DateTime = null;
+                        }
+                        catch (Exception Ex)
+                        {
+                            Insert_Log(Ex.Message, 1);
+                            Insert_Log("Cannot create % Error Math Waveform (All Samples). Try again.", 1);
+                        }
+                    });
+                }
+                else
+                {
+                    Insert_Log("Cannot create % Error Math Waveform (All Samples): Value must not be " + Value, 1);
+                }
+            }
+            else
+            {
+                if (isValid == false)
+                {
+                    Insert_Log("Cannot create % Error Math Waveform (All Samples). Value must be a real number.", 1);
+                }
+                if (isValidGraphColor == false)
+                {
+                    Insert_Log("Cannot create % Error Math Waveform (All Samples). Graph Color values are not valid.", 1);
+                }
+            }
+        }
+
+        private void DB_Button_Math_AllSamples_Click(object sender, RoutedEventArgs e)
+        {
+            (bool isValid_DB_1_Value, double DB_1_Value) = Text_Num(DB_1_Math_AllSamples.Text, true, false);
+            (bool isValid_DB_2_Value, double DB_2_Value) = Text_Num(DB_2_Math_AllSamples.Text, false, false);
+            (bool isValid_DB_3_Value, double DB_3_Value) = Text_Num(DB_3_Math_AllSamples.Text, false, false);
+            (bool isValidGraphColor, int Value_Red, int Value_Green, int Value_Blue) = GraphColor_Math_AllSamples_Check();
+            if (isValid_DB_1_Value == true & isValid_DB_2_Value == true & isValid_DB_3_Value == true & isValidGraphColor == true)
+            {
+                string Graph_Title = GraphTitle_TextBox_Math_AllSamples.Text;
+                string Y_Axis_Title = YAxis_TextBox_Math_AllSamples.Text;
+                Task.Run(() =>
+                {
+                    try
+                    {
+                        int Measurement_Count_Copy = Measurement_Count;
+                        double[] Measurement_Data_Copy = new double[Measurement_Count_Copy];
+                        Array.Copy(Measurement_Data, Measurement_Data_Copy, Measurement_Count_Copy);
+
+                        DateTime[] Measurement_Data_DateTime = new DateTime[Measurement_Count_Copy];
+                        Array.Copy(Measurement_DateTime, Measurement_Data_DateTime, Measurement_Count_Copy);
+
+                        for (int i = 0; i < Measurement_Count_Copy; i++)
+                        {
+                            Measurement_Data_Copy[i] = (DB_1_Value) * (Math.Log(((Math.Abs(Measurement_Data_Copy[i])) / DB_3_Value), DB_2_Value));
+                            if (double.IsNaN(Measurement_Data_Copy[i]) || double.IsInfinity(Measurement_Data_Copy[i]))
+                            {
+                                Measurement_Data_Copy[i] = 0;
+                            }
+                        }
+                        Create_Waveform_Window("DB (All Samples Math Waveform): " + DB_1_Value + " x log" + DB_2_Value + " (Samples / " + DB_3_Value + ")", DB_3_Value, 0, Measurement_Count_Copy, Graph_Title, Y_Axis_Title, Value_Red, Value_Green, Value_Blue, Measurement_Data_Copy, Measurement_Count_Copy, Measurement_Data_DateTime);
+                        Measurement_Data_Copy = null;
+                        Measurement_Data_DateTime = null;
+                    }
+                    catch (Exception Ex)
+                    {
+                        Insert_Log(Ex.Message, 1);
+                        Insert_Log("Cannot create DB (All Samples) Math Waveform. Try again.", 1);
+                    }
+                });
+            }
+            else
+            {
+                if ((isValid_DB_1_Value == false) || (isValid_DB_2_Value == false) || (isValid_DB_3_Value == false))
+                {
+                    Insert_Log("Cannot create DB (All Samples) Math Waveform. The base and the argument of the logarithm must be positive. Check your inputted values.", 1);
+                }
+                if (isValidGraphColor == false)
+                {
+                    Insert_Log("Cannot create DB (All Samples) Math Waveform. Check your Graph Color values.", 1);
+                }
+            }
+        }
+
+        private void DBM_Button_Math_AllSamples_Click(object sender, RoutedEventArgs e)
+        {
+            (bool isValid_DBM_1_Value, double DBM_1_Value) = Text_Num(DBM_1_Math_AllSamples.Text, true, false);
+            (bool isValid_DBM_2_Value, double DBM_2_Value) = Text_Num(DBM_2_Math_AllSamples.Text, false, false);
+            (bool isValid_DBM_3_Value, double DBM_3_Value) = Text_Num(DBM_3_Math_AllSamples.Text, false, false);
+            (bool isValid_DBM_4_Value, double DBM_4_Value) = Text_Num(DBM_4_Math_AllSamples.Text, false, false);
+            (bool isValidGraphColor, int Value_Red, int Value_Green, int Value_Blue) = GraphColor_Math_AllSamples_Check();
+            if (isValid_DBM_1_Value == true & isValid_DBM_2_Value == true & isValid_DBM_3_Value == true & isValid_DBM_4_Value == true & isValidGraphColor == true)
+            {
+                string Graph_Title = GraphTitle_TextBox_Math_AllSamples.Text;
+                string Y_Axis_Title = YAxis_TextBox_Math_AllSamples.Text;
+                Task.Run(() =>
+                {
+                    try
+                    {
+                        int Measurement_Count_Copy = Measurement_Count;
+                        double[] Measurement_Data_Copy = new double[Measurement_Count_Copy];
+                        Array.Copy(Measurement_Data, Measurement_Data_Copy, Measurement_Count_Copy);
+
+                        DateTime[] Measurement_Data_DateTime = new DateTime[Measurement_Count_Copy];
+                        Array.Copy(Measurement_DateTime, Measurement_Data_DateTime, Measurement_Count_Copy);
+
+                        for (int i = 0; i < Measurement_Count_Copy; i++)
+                        {
+                            Measurement_Data_Copy[i] = (DBM_1_Value) * (Math.Log(((((Math.Pow(Measurement_Data_Copy[i], 2)) / DBM_3_Value)) / DBM_4_Value), DBM_2_Value));
+                            if (double.IsNaN(Measurement_Data_Copy[i]) || double.IsInfinity(Measurement_Data_Copy[i]))
+                            {
+                                Measurement_Data_Copy[i] = 0;
+                            }
+                        }
+                        Create_Waveform_Window("DBM (All Samples Math Waveform): " + DBM_1_Value + " x log" + DBM_2_Value + " ((Samples^2 / " + DBM_3_Value + ") / " + DBM_4_Value + ")", DBM_3_Value, 0, Measurement_Count_Copy, Graph_Title, Y_Axis_Title, Value_Red, Value_Green, Value_Blue, Measurement_Data_Copy, Measurement_Count_Copy, Measurement_Data_DateTime);
+                        Measurement_Data_Copy = null;
+                        Measurement_Data_DateTime = null;
+                    }
+                    catch (Exception Ex)
+                    {
+                        Insert_Log(Ex.Message, 1);
+                        Insert_Log("Cannot create DBM (All Samples) Math Waveform. Try again.", 1);
+                    }
+                });
+            }
+            else
+            {
+                if ((isValid_DBM_1_Value == false) || (isValid_DBM_2_Value == false) || (isValid_DBM_3_Value == false) || (isValid_DBM_4_Value == false))
+                {
+                    Insert_Log("Cannot create DBM (All Samples) Math Waveform. The base and the argument of the logarithm must be positive. Check your inputted values.", 1);
+                }
+                if (isValidGraphColor == false)
+                {
+                    Insert_Log("Cannot create DBM (All Samples) Math Waveform. Check your Graph Color values.", 1);
+                }
+            }
+        }
+
         private void GraphColor_SetButton_Math_AllSamples_Click(object sender, RoutedEventArgs e)
         {
             (bool isValid, int Value_Red, int Value_Green, int Value_Blue) = GraphColor_Math_AllSamples_Check();
@@ -3961,6 +4122,182 @@ namespace HP_3478A
                 else
                 {
                     Insert_Log("Cannot create Division (N Samples) Math Waveform.", 1);
+                }
+            }
+        }
+
+        private void Percentage_Error_Button_NSamples_Click(object sender, RoutedEventArgs e)
+        {
+            (bool IsValidRange, int StartValue, int EndValue) = MathNsamples_Range();
+            (bool isValid, double Value) = Text_Num(Percentage_Error_TextBox_NSamples.Text, true, false);
+            (bool isValidGraphColor, int Value_Red, int Value_Green, int Value_Blue) = GraphColor_Math_NSamples_Check();
+            if (isValid == true & isValidGraphColor == true & IsValidRange == true)
+            {
+                if (Value != 0)
+                {
+                    string Graph_Title = GraphTitle_TextBox_Math_NSamples.Text;
+                    string Y_Axis_Title = YAxis_TextBox_Math_NSamples.Text;
+                    Task.Run(() =>
+                    {
+                        try
+                        {
+                            int Measurement_Count_Copy = (EndValue - StartValue) + 1;
+                            double[] Measurement_Data_Copy = new double[Measurement_Count_Copy];
+                            Array.Copy(Measurement_Data, StartValue, Measurement_Data_Copy, 0, Measurement_Count_Copy);
+
+                            DateTime[] Measurement_Data_DateTime = new DateTime[Measurement_Count_Copy];
+                            Array.Copy(Measurement_DateTime, StartValue, Measurement_Data_DateTime, 0, Measurement_Count_Copy);
+
+                            for (int i = 0; i < Measurement_Count_Copy; i++)
+                            {
+                                Measurement_Data_Copy[i] = Math.Abs((Measurement_Data_Copy[i] - Value) / Value) * 100;
+                            }
+                            Create_Waveform_Window("% Error Math Waveform [" + StartValue + ", " + EndValue + "]: |(Samples - " + Value + ") / " + Value + "| x 100", Value, 0, Measurement_Count_Copy, Graph_Title, Y_Axis_Title, Value_Red, Value_Green, Value_Blue, Measurement_Data_Copy, Measurement_Count_Copy, Measurement_Data_DateTime);
+                            Measurement_Data_Copy = null;
+                            Measurement_Data_DateTime = null;
+                        }
+                        catch (Exception Ex)
+                        {
+                            Insert_Log(Ex.Message, 1);
+                            Insert_Log("Cannot create % Error Math Waveform (N Samples). Try again.", 1);
+                        }
+                    });
+                }
+                else
+                {
+                    Insert_Log("Cannot create % Error Math Waveform (N Samples): Value must not be " + Value, 1);
+                }
+            }
+            else
+            {
+                if (isValid == false)
+                {
+                    Insert_Log("Cannot create % Error Math Waveform (N Samples). Value must be a real number.", 1);
+                }
+                if (isValidGraphColor == false)
+                {
+                    Insert_Log("Cannot create % Error Math Waveform (N Samples). Graph Color values are not valid.", 1);
+                }
+                if (IsValidRange == false)
+                {
+                    Insert_Log("Cannot create % Error Math Waveform (N Samples). Check N Samples Start and End input values.", 1);
+                }
+            }
+        }
+
+        private void DB_Button_Math_NSamples_Click(object sender, RoutedEventArgs e)
+        {
+            (bool IsValidRange, int StartValue, int EndValue) = MathNsamples_Range();
+            (bool isValid_DB_1_Value, double DB_1_Value) = Text_Num(DB_1_Math_NSamples.Text, true, false);
+            (bool isValid_DB_2_Value, double DB_2_Value) = Text_Num(DB_2_Math_NSamples.Text, false, false);
+            (bool isValid_DB_3_Value, double DB_3_Value) = Text_Num(DB_3_Math_NSamples.Text, false, false);
+            (bool isValidGraphColor, int Value_Red, int Value_Green, int Value_Blue) = GraphColor_Math_NSamples_Check();
+            if (isValid_DB_1_Value == true & isValid_DB_2_Value == true & isValid_DB_3_Value == true & isValidGraphColor == true & IsValidRange == true)
+            {
+                string Graph_Title = GraphTitle_TextBox_Math_NSamples.Text;
+                string Y_Axis_Title = YAxis_TextBox_Math_NSamples.Text;
+                Task.Run(() =>
+                {
+                    try
+                    {
+                        int Measurement_Count_Copy = (EndValue - StartValue) + 1;
+                        double[] Measurement_Data_Copy = new double[Measurement_Count_Copy];
+                        Array.Copy(Measurement_Data, StartValue, Measurement_Data_Copy, 0, Measurement_Count_Copy);
+
+                        DateTime[] Measurement_Data_DateTime = new DateTime[Measurement_Count_Copy];
+                        Array.Copy(Measurement_DateTime, StartValue, Measurement_Data_DateTime, 0, Measurement_Count_Copy);
+
+                        for (int i = 0; i < Measurement_Count_Copy; i++)
+                        {
+                            Measurement_Data_Copy[i] = (DB_1_Value) * (Math.Log(((Math.Abs(Measurement_Data_Copy[i])) / DB_3_Value), DB_2_Value));
+                            if (double.IsNaN(Measurement_Data_Copy[i]) || double.IsInfinity(Measurement_Data_Copy[i]))
+                            {
+                                Measurement_Data_Copy[i] = 0;
+                            }
+                        }
+                        Create_Waveform_Window("DB (N Samples Math Waveform [" + StartValue + ", " + EndValue + "]): " + DB_1_Value + " x log" + DB_2_Value + " (Samples / " + DB_3_Value + ")", DB_3_Value, 0, Measurement_Count_Copy, Graph_Title, Y_Axis_Title, Value_Red, Value_Green, Value_Blue, Measurement_Data_Copy, Measurement_Count_Copy, Measurement_Data_DateTime);
+                        Measurement_Data_Copy = null;
+                        Measurement_Data_DateTime = null;
+                    }
+                    catch (Exception Ex)
+                    {
+                        Insert_Log(Ex.Message, 1);
+                        Insert_Log("Cannot create DB (N Samples) Math Waveform. Try again.", 1);
+                    }
+                });
+            }
+            else
+            {
+                if (IsValidRange == false)
+                {
+                    Insert_Log("Cannot create DB (N Samples) Math Waveform. Check N Samples Start and End input values.", 1);
+                }
+                if ((isValid_DB_1_Value == false) || (isValid_DB_2_Value == false) || (isValid_DB_3_Value == false))
+                {
+                    Insert_Log("Cannot create DB (N Samples) Math Waveform. The base and the argument of the logarithm must be positive. Check your inputted values.", 1);
+                }
+                if (isValidGraphColor == false)
+                {
+                    Insert_Log("Cannot create DB (N Samples) Math Waveform. Check your Graph Color values.", 1);
+                }
+            }
+        }
+
+        private void DBM_Button_Math_NSamples_Click(object sender, RoutedEventArgs e)
+        {
+            (bool IsValidRange, int StartValue, int EndValue) = MathNsamples_Range();
+            (bool isValid_DBM_1_Value, double DBM_1_Value) = Text_Num(DBM_1_Math_NSamples.Text, true, false);
+            (bool isValid_DBM_2_Value, double DBM_2_Value) = Text_Num(DBM_2_Math_NSamples.Text, false, false);
+            (bool isValid_DBM_3_Value, double DBM_3_Value) = Text_Num(DBM_3_Math_NSamples.Text, false, false);
+            (bool isValid_DBM_4_Value, double DBM_4_Value) = Text_Num(DBM_4_Math_NSamples.Text, false, false);
+            (bool isValidGraphColor, int Value_Red, int Value_Green, int Value_Blue) = GraphColor_Math_NSamples_Check();
+            if (isValid_DBM_1_Value == true & isValid_DBM_2_Value == true & isValid_DBM_3_Value == true & isValid_DBM_4_Value == true & isValidGraphColor == true & IsValidRange == true)
+            {
+                string Graph_Title = GraphTitle_TextBox_Math_NSamples.Text;
+                string Y_Axis_Title = YAxis_TextBox_Math_NSamples.Text;
+                Task.Run(() =>
+                {
+                    try
+                    {
+                        int Measurement_Count_Copy = (EndValue - StartValue) + 1;
+                        double[] Measurement_Data_Copy = new double[Measurement_Count_Copy];
+                        Array.Copy(Measurement_Data, StartValue, Measurement_Data_Copy, 0, Measurement_Count_Copy);
+
+                        DateTime[] Measurement_Data_DateTime = new DateTime[Measurement_Count_Copy];
+                        Array.Copy(Measurement_DateTime, StartValue, Measurement_Data_DateTime, 0, Measurement_Count_Copy);
+
+                        for (int i = 0; i < Measurement_Count_Copy; i++)
+                        {
+                            Measurement_Data_Copy[i] = (DBM_1_Value) * (Math.Log(((((Math.Pow(Measurement_Data_Copy[i], 2)) / DBM_3_Value)) / DBM_4_Value), DBM_2_Value));
+                            if (double.IsNaN(Measurement_Data_Copy[i]) || double.IsInfinity(Measurement_Data_Copy[i]))
+                            {
+                                Measurement_Data_Copy[i] = 0;
+                            }
+                        }
+                        Create_Waveform_Window("DBM (N Samples Math Waveform [" + StartValue + ", " + EndValue + "]): " + DBM_1_Value + " x log" + DBM_2_Value + " ((Samples^2 / " + DBM_3_Value + ") / " + DBM_4_Value + ")", DBM_3_Value, 0, Measurement_Count_Copy, Graph_Title, Y_Axis_Title, Value_Red, Value_Green, Value_Blue, Measurement_Data_Copy, Measurement_Count_Copy, Measurement_Data_DateTime);
+                        Measurement_Data_Copy = null;
+                        Measurement_Data_DateTime = null;
+                    }
+                    catch (Exception Ex)
+                    {
+                        Insert_Log(Ex.Message, 1);
+                        Insert_Log("Cannot create DBM (N Samples) Math Waveform. Try again.", 1);
+                    }
+                });
+            }
+            else
+            {
+                if (IsValidRange == true)
+                {
+                    Insert_Log("Cannot create DBM (N Samples) Math Waveform. Check N Samples Start and End input values.", 1);
+                }
+                if ((isValid_DBM_1_Value == false) || (isValid_DBM_2_Value == false) || (isValid_DBM_3_Value == false) || (isValid_DBM_4_Value == false))
+                {
+                    Insert_Log("Cannot create DBM (N Samples) Math Waveform. The base and the argument of the logarithm must be positive. Check your inputted values.", 1);
+                }
+                if (isValidGraphColor == false)
+                {
+                    Insert_Log("Cannot create DBM (N Samples) Math Waveform. Check your Graph Color values.", 1);
                 }
             }
         }

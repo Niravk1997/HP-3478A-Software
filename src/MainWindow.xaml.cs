@@ -25,7 +25,7 @@ namespace HP_3478A
 {
     public static class Serial_COM_Info
     {
-        public static bool isChanged = false;
+        public static bool isConnected = false;
 
         //HP3478A COM Device Info
         public static string COM_Port;
@@ -337,25 +337,23 @@ namespace HP_3478A
 
         public void Serial_COM_Selected()
         {
-            Connect.IsEnabled = false;
-            unlockControls();
-            Serial_Connect();
-            this.Title = "HP 3478A " + Serial_COM_Info.COM_Port;
-            DataSampling = true;
-            saveOutputLog = true;
-            saveMeasurements = true;
-            Stop_Sampling.IsEnabled = true;
-            VDC_Border.BorderBrush = Selected;
-            VDC_Auto_Border.BorderBrush = Selected;
-            Digit_Five_Border.BorderBrush = Selected;
-            Trigger_Internal_Border.BorderBrush = Selected;
-            UpdateSpeed_Default_Set_Border.BorderBrush = Selected;
-            DataTimer.Enabled = true;
-            StartDateTime = DateTime.Now;
-            Data_process();
-            saveMeasurements_Timer.Enabled = true;
-            Sampling_Only.IsEnabled = true;
-            DataLogger.IsEnabled = true;
+            if (Serial_COM_Info.isConnected == true)
+            {
+                Connect.IsEnabled = false;
+                unlockControls();
+                Serial_Connect();
+                this.Title = "HP 3478A " + Serial_COM_Info.COM_Port;
+                DataSampling = true;
+                saveOutputLog = true;
+                saveMeasurements = true;
+                Stop_Sampling.IsEnabled = true;
+                DataTimer.Enabled = true;
+                StartDateTime = DateTime.Now;
+                Data_process();
+                saveMeasurements_Timer.Enabled = true;
+                Sampling_Only.IsEnabled = true;
+                DataLogger.IsEnabled = true;
+            }
         }
 
         private void runtime_Update(object sender, EventArgs e)
@@ -938,7 +936,7 @@ namespace HP_3478A
                 catch (Exception) 
                 {
                     insert_Log("Could not add data to Table Window.", 2);
-                    insert_Log("This could happen if the table window was opened or closed recently.", 1);
+                    insert_Log("This could happen if the table window was opened or closed recently.", 2);
                 }
             }
 
@@ -951,7 +949,7 @@ namespace HP_3478A
                 catch (Exception) 
                 {
                     insert_Log("Could not add data to Graph Window.", 2);
-                    insert_Log("This could happen if the graph window was opened or closed recently.", 1);
+                    insert_Log("This could happen if the graph window was opened or closed recently.", 2);
                 }
             }
         }
@@ -1135,7 +1133,7 @@ namespace HP_3478A
             if (COM_Select == null)
             {
                 COM_Select = new COM_Select_Window();
-                COM_Select.Closed += (a, b) => COM_Select = null;
+                COM_Select.Closed += (a, b) => { COM_Select = null; Serial_COM_Selected(); };
                 COM_Select.Owner = this;
                 COM_Select.Show();
             }
@@ -2343,7 +2341,7 @@ namespace HP_3478A
                 lockControls();
                 isUserSendCommand = true;
                 Speedup_Interval();
-                insert_Log("VAC Range set to Auto.", 5);
+                insert_Log("Ohms Range set to Auto.", 5);
             }
             else
             {
@@ -2359,7 +2357,7 @@ namespace HP_3478A
                 lockControls();
                 isUserSendCommand = true;
                 Speedup_Interval();
-                insert_Log("VAC Range set to 30Ω.", 5);
+                insert_Log("Ohms Range set to 30Ω.", 5);
             }
             else
             {
@@ -2375,7 +2373,7 @@ namespace HP_3478A
                 lockControls();
                 isUserSendCommand = true;
                 Speedup_Interval();
-                insert_Log("VAC Range set to 300Ω.", 5);
+                insert_Log("Ohms Range set to 300Ω.", 5);
             }
             else
             {
@@ -2391,7 +2389,7 @@ namespace HP_3478A
                 lockControls();
                 isUserSendCommand = true;
                 Speedup_Interval();
-                insert_Log("VAC Range set to 3KΩ.", 5);
+                insert_Log("Ohms Range set to 3KΩ.", 5);
             }
             else
             {
@@ -2407,7 +2405,7 @@ namespace HP_3478A
                 lockControls();
                 isUserSendCommand = true;
                 Speedup_Interval();
-                insert_Log("VAC Range set to 30KΩ.", 5);
+                insert_Log("Ohms Range set to 30KΩ.", 5);
             }
             else
             {
@@ -2423,7 +2421,7 @@ namespace HP_3478A
                 lockControls();
                 isUserSendCommand = true;
                 Speedup_Interval();
-                insert_Log("VAC Range set to 300KΩ.", 5);
+                insert_Log("Ohms Range set to 300KΩ.", 5);
             }
             else
             {
@@ -2439,7 +2437,7 @@ namespace HP_3478A
                 lockControls();
                 isUserSendCommand = true;
                 Speedup_Interval();
-                insert_Log("VAC Range set to 3MΩ.", 5);
+                insert_Log("Ohms Range set to 3MΩ.", 5);
             }
             else
             {
@@ -2455,7 +2453,7 @@ namespace HP_3478A
                 lockControls();
                 isUserSendCommand = true;
                 Speedup_Interval();
-                insert_Log("VAC Range set to 30MΩ.", 5);
+                insert_Log("Ohms Range set to 30MΩ.", 5);
             }
             else
             {
@@ -2867,7 +2865,7 @@ namespace HP_3478A
             lockControls();
             isUserSendCommand = true;
             Speedup_Interval();
-            insert_Log("Single Trigger Selected.", 3);
+            insert_Log("Single Trigger Selected. This trigger won't work with this software.", 3);
         }
 
         private void Trigger_Hold_Button_Click(object sender, RoutedEventArgs e)
@@ -2876,7 +2874,7 @@ namespace HP_3478A
             lockControls();
             isUserSendCommand = true;
             Speedup_Interval();
-            insert_Log("Hold Trigger Selected.", 3);
+            insert_Log("Hold Trigger Selected. This trigger won't work with this software.", 3);
         }
 
         private void Trigger_Fast_Button_Click(object sender, RoutedEventArgs e)
@@ -2885,7 +2883,7 @@ namespace HP_3478A
             lockControls();
             isUserSendCommand = true;
             Speedup_Interval();
-            insert_Log("Fast Trigger Selected.", 3);
+            insert_Log("Fast Trigger Selected. This trigger won't work with this software.", 3);
         }
 
         private string Trigger_Selector(int Trigger)
@@ -3812,7 +3810,7 @@ namespace HP_3478A
             {
                 DataTimer.Stop();
                 DataTimer.Dispose();
-                if (Serial_COM_Info.isChanged == true)
+                if (Serial_COM_Info.isConnected == true)
                 {
                     HP3478A.Close();
                     HP3478A.Dispose();

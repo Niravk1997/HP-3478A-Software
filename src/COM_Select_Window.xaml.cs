@@ -525,7 +525,6 @@ namespace HP_3478A
                                 Info_Log.Text = String.Empty;
                                 Info_Log.Inlines.Clear();
                                 Data_Updater();
-                                (Owner as MainWindow).Serial_COM_Selected();
                                 this.Close();
                             }
                         }
@@ -566,7 +565,7 @@ namespace HP_3478A
             Serial_COM_Info.COM_RtsEnable = COM_RtsEnable;
             Serial_COM_Info.GPIB_Address = COM_GPIB_Address_Value;
             Serial_COM_Info.folder_Directory = folder_Directory;
-            Serial_COM_Info.isChanged = true;
+            Serial_COM_Info.isConnected = true;
         }
 
         private void Info_Clear_Click(object sender, RoutedEventArgs e)

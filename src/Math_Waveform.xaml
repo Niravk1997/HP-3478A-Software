@@ -550,13 +550,13 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="120"/>
-                        <ColumnDefinition MinWidth="90"/>
+                        <ColumnDefinition MinWidth="90" MaxWidth="130"/>
                         <ColumnDefinition Width="145"/>
-                        <ColumnDefinition MinWidth="120"/>
+                        <ColumnDefinition MinWidth="120" MaxWidth="170"/>
                         <ColumnDefinition Width="90"/>
                         <ColumnDefinition Width="12"/>
                         <ColumnDefinition Width="70"/>
-                        <ColumnDefinition Width="155"/>
+                        <ColumnDefinition MinWidth="155"/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center">
                         <Label FontSize="14" Padding="0" HorizontalAlignment="Right" Content="Total Samples: "/>
@@ -776,148 +776,206 @@
                 </Grid>
             </TabItem>
             <TabItem x:Name="AllMath_Tab" Header="Math (All Samples)">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="375"/>
-                        <ColumnDefinition Width="320"/>
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Orientation="Vertical" Grid.Column="0" VerticalAlignment="Top">
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Label FontSize="13" Padding="0" Content="Addition ( "/>
-                            <ComboBox FontSize="13" Padding="0,0,0,0" Margin="0,1,0,0">
-                                <ComboBoxItem x:Name="Addition_AllSamples_Samples_Value" Content=" Samples + Value" IsSelected="True"/>
-                                <ComboBoxItem x:Name="Addition_AllSamples_Value_Samples" Content=" Value + Samples" IsSelected="False"/>
-                            </ComboBox>
-                            <Label FontSize="13" Padding="0" Content=" ): "/>
-                            <TextBox x:Name="Addition_TextBox_Math_AllSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="79" Text=""/>
-                            <Button x:Name="Addition_Button_Math_AllSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="Addition_Button_Math_AllSamples_Click"/>
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="375"/>
+                            <ColumnDefinition Width="320"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Vertical" Grid.Column="0" VerticalAlignment="Top">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Label FontSize="13" Padding="0" Content="Addition ( "/>
+                                <ComboBox FontSize="13" Padding="0,0,0,0" Margin="0,1,0,0">
+                                    <ComboBoxItem x:Name="Addition_AllSamples_Samples_Value" Content=" Samples + Value" IsSelected="True"/>
+                                    <ComboBoxItem x:Name="Addition_AllSamples_Value_Samples" Content=" Value + Samples" IsSelected="False"/>
+                                </ComboBox>
+                                <Label FontSize="13" Padding="0" Content=" ): "/>
+                                <TextBox x:Name="Addition_TextBox_Math_AllSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="79" Text=""/>
+                                <Button x:Name="Addition_Button_Math_AllSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="Addition_Button_Math_AllSamples_Click"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Label FontSize="13" Padding="0" Content="Subtraction ( "/>
+                                <ComboBox FontSize="13" Padding="3,0,0,0" Margin="0,1,0,0">
+                                    <ComboBoxItem x:Name="Subtraction_AllSamples_Samples_Value" Content=" Samples - Value" IsSelected="True"/>
+                                    <ComboBoxItem x:Name="Subtraction_AllSamples_Value_Samples" Content=" Value - Samples" IsSelected="False"/>
+                                </ComboBox>
+                                <Label FontSize="13" Padding="0,0,0,0" Content=" ): "/>
+                                <TextBox x:Name="Subtraction_TextBox_Math_AllSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="79" Text=""/>
+                                <Button x:Name="Subtraction_Button_Math_AllSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="Subtraction_Button_Math_AllSamples_Click"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Label FontSize="13" Padding="0" Content="Multiplication ( "/>
+                                <ComboBox FontSize="13" Padding="3,0,0,0" Margin="0,1,0,0">
+                                    <ComboBoxItem x:Name="Multiplication_AllSamples_Samples_Value" Content=" Samples * Value" IsSelected="True"/>
+                                    <ComboBoxItem x:Name="Multiplication_AllSamples_Value_Samples" Content=" Value * Samples" IsSelected="False"/>
+                                </ComboBox>
+                                <Label FontSize="13" Padding="0" Content=" ): "/>
+                                <TextBox x:Name="Mutiplication_TextBox_Math_AllSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="79" Text=""/>
+                                <Button x:Name="Multiplication_Button_Math_AllSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="Multiplication_Button_Math_AllSamples_Click"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Label FontSize="13" Padding="0" Content="Division ( "/>
+                                <ComboBox FontSize="13" Padding="3,0,0,0" Margin="0,1,0,0">
+                                    <ComboBoxItem x:Name="Division_AllSamples_Samples_Value" Content=" Samples / Value" IsSelected="True"/>
+                                    <ComboBoxItem x:Name="Division_AllSamples_Value_Samples" Content=" Value / Samples" IsSelected="False"/>
+                                </ComboBox>
+                                <Label FontSize="13" Padding="0" Content=" ): "/>
+                                <TextBox x:Name="Division_TextBox_Math_AllSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="79" Text=""/>
+                                <Button x:Name="Division_Button_Math_AllSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="Division_Button_Math_AllSamples_Click"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Label Content="% Error = |(Samples - Y) / Y| x 100: " FontSize="13" Padding="0"/>
+                                <TextBox x:Name="Percentage_Error_TextBox_AllSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="79" Text=""/>
+                                <Button x:Name="Percentage_Error_Button_AllSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="Percentage_Error_Button_AllSamples_Click"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Label FontSize="13" Padding="0" Content="DB: "/>
+                                <TextBox x:Name="DB_1_Math_AllSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="35" MaxWidth="35" Text="20"/>
+                                <Label FontSize="13" Padding="0" Content=" x log "/>
+                                <TextBox x:Name="DB_2_Math_AllSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="35" MaxWidth="35" Text="10"/>
+                                <Label FontSize="13" Padding="0" Content=" (Samples / "/>
+                                <TextBox x:Name="DB_3_Math_AllSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="40" MaxWidth="40" Text="1"/>
+                                <Label FontSize="13" Padding="0" Content=")"/>
+                                <Button x:Name="DB_Button_Math_AllSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="DB_Button_Math_AllSamples_Click"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Label FontSize="13" Padding="0" Content="DBM: "/>
+                                <TextBox x:Name="DBM_1_Math_AllSamples" FontSize="12" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="25" MaxWidth="25" Text="10"/>
+                                <Label FontSize="12" Padding="0" Content=" x log "/>
+                                <TextBox x:Name="DBM_2_Math_AllSamples" FontSize="12" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="25" MaxWidth="25" Text="10"/>
+                                <Label FontSize="12" Padding="0" Content=" ((Samples^2 / "/>
+                                <TextBox x:Name="DBM_3_Math_AllSamples" FontSize="12" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="40" MaxWidth="40" Text="50"/>
+                                <Label FontSize="12" Padding="0" Content=") / "/>
+                                <TextBox x:Name="DBM_4_Math_AllSamples" FontSize="12" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="40" MaxWidth="40" Text="0.001"/>
+                                <Label FontSize="12" Padding="0" Content=")"/>
+                                <Button x:Name="DBM_Button_Math_AllSamples" FontSize="12" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="DBM_Button_Math_AllSamples_Click"/>
+                            </StackPanel>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Label FontSize="13" Padding="0" Content="Subtraction ( "/>
-                            <ComboBox FontSize="13" Padding="3,0,0,0" Margin="0,1,0,0">
-                                <ComboBoxItem x:Name="Subtraction_AllSamples_Samples_Value" Content=" Samples - Value" IsSelected="True"/>
-                                <ComboBoxItem x:Name="Subtraction_AllSamples_Value_Samples" Content=" Value - Samples" IsSelected="False"/>
-                            </ComboBox>
-                            <Label FontSize="13" Padding="0,0,0,0" Content=" ): "/>
-                            <TextBox x:Name="Subtraction_TextBox_Math_AllSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="79" Text=""/>
-                            <Button x:Name="Subtraction_Button_Math_AllSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="Subtraction_Button_Math_AllSamples_Click"/>
+                        <StackPanel Orientation="Vertical" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right">
+                            <StackPanel Orientation="Horizontal" Margin="7,0,0,0">
+                                <Label FontSize="13" Padding="0" Content="Graph Title: "/>
+                                <TextBox x:Name="GraphTitle_TextBox_Math_AllSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="115" Text=""/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontSize="13" Padding="0" Content="Y-Axis Label: "/>
+                                <TextBox x:Name="YAxis_TextBox_Math_AllSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="115" Text=""/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,1,0,0">
+                                <Label FontSize="13" Padding="0" Content="Graph Color: "/>
+                                <Rectangle x:Name="GraphColor_Preview_Math_AllSamples" Width="25" Fill="#FF32FF1E" Margin="0,0,0,0"/>
+                                <TextBox x:Name="Red_GraphColor_TextBox_Math_AllSamples" Padding="0" Text="50"  HorizontalContentAlignment="Center" Width="25" Margin="5,0,0,0"/>
+                                <TextBox x:Name="Green_GraphColor_TextBox_Math_AllSamples" Padding="0" Text="255"  HorizontalContentAlignment="Center" Width="25" Margin="5,0,0,0"/>
+                                <TextBox x:Name="Blue_GraphColor_TextBox_Math_AllSamples" Padding="0" Text="30"  HorizontalContentAlignment="Center" Width="25"  Margin="5,0,0,0"/>
+                                <Button x:Name="GraphColor_SetButton_Math_AllSamples" FontSize="13" Padding="0" Content="Set" Margin="5,0,0,0" BorderBrush="White" Width="30" Click="GraphColor_SetButton_Math_AllSamples_Click"/>
+                                <Button x:Name="GraphColor_RandomizeButton_Math_AllSamples" FontSize="13" Padding="0" Content="Randomize" BorderBrush="White" Margin="5,0,0,0" Width="70" Click="GraphColor_RandomizeButton_Math_AllSamples_Click"/>
+                            </StackPanel>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Label FontSize="13" Padding="0" Content="Multiplication ( "/>
-                            <ComboBox FontSize="13" Padding="3,0,0,0" Margin="0,1,0,0">
-                                <ComboBoxItem x:Name="Multiplication_AllSamples_Samples_Value" Content=" Samples * Value" IsSelected="True"/>
-                                <ComboBoxItem x:Name="Multiplication_AllSamples_Value_Samples" Content=" Value * Samples" IsSelected="False"/>
-                            </ComboBox>
-                            <Label FontSize="13" Padding="0" Content=" ): "/>
-                            <TextBox x:Name="Mutiplication_TextBox_Math_AllSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="79" Text=""/>
-                            <Button x:Name="Multiplication_Button_Math_AllSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="Multiplication_Button_Math_AllSamples_Click"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Label FontSize="13" Padding="0" Content="Division ( "/>
-                            <ComboBox FontSize="13" Padding="3,0,0,0" Margin="0,1,0,0">
-                                <ComboBoxItem x:Name="Division_AllSamples_Samples_Value" Content=" Samples / Value" IsSelected="True"/>
-                                <ComboBoxItem x:Name="Division_AllSamples_Value_Samples" Content=" Value / Samples" IsSelected="False"/>
-                            </ComboBox>
-                            <Label FontSize="13" Padding="0" Content=" ): "/>
-                            <TextBox x:Name="Division_TextBox_Math_AllSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="79" Text=""/>
-                            <Button x:Name="Division_Button_Math_AllSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="Division_Button_Math_AllSamples_Click"/>
-                        </StackPanel>
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right">
-                        <StackPanel Orientation="Horizontal" Margin="7,0,0,0">
-                            <Label FontSize="13" Padding="0" Content="Graph Title: "/>
-                            <TextBox x:Name="GraphTitle_TextBox_Math_AllSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="115" Text=""/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <Label FontSize="13" Padding="0" Content="Y-Axis Label: "/>
-                            <TextBox x:Name="YAxis_TextBox_Math_AllSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="115" Text=""/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0,1,0,0">
-                            <Label FontSize="13" Padding="0" Content="Graph Color: "/>
-                            <Rectangle x:Name="GraphColor_Preview_Math_AllSamples" Width="25" Fill="#FF32FF1E" Margin="0,0,0,0"/>
-                            <TextBox x:Name="Red_GraphColor_TextBox_Math_AllSamples" Padding="0" Text="50"  HorizontalContentAlignment="Center" Width="25" Margin="5,0,0,0"/>
-                            <TextBox x:Name="Green_GraphColor_TextBox_Math_AllSamples" Padding="0" Text="255"  HorizontalContentAlignment="Center" Width="25" Margin="5,0,0,0"/>
-                            <TextBox x:Name="Blue_GraphColor_TextBox_Math_AllSamples" Padding="0" Text="30"  HorizontalContentAlignment="Center" Width="25"  Margin="5,0,0,0"/>
-                            <Button x:Name="GraphColor_SetButton_Math_AllSamples" FontSize="13" Padding="0" Content="Set" Margin="5,0,0,0" BorderBrush="White" Width="30" Click="GraphColor_SetButton_Math_AllSamples_Click"/>
-                            <Button x:Name="GraphColor_RandomizeButton_Math_AllSamples" FontSize="13" Padding="0" Content="Randomize" BorderBrush="White" Margin="5,0,0,0" Width="70" Click="GraphColor_RandomizeButton_Math_AllSamples_Click"/>
-                        </StackPanel>
-                    </StackPanel>
-                </Grid>
+                    </Grid>
+                </ScrollViewer>
             </TabItem>
             <TabItem x:Name="NMath_Tab" Header="Math (N Samples)">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="375"/>
-                        <ColumnDefinition Width="380"/>
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Orientation="Vertical" Grid.Column="0" VerticalAlignment="Top">
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Label FontSize="13" Padding="0" Content="Addition ( "/>
-                            <ComboBox FontSize="13" Padding="0,0,0,0" Margin="0,1,0,0">
-                                <ComboBoxItem x:Name="Addition_NSamples_Samples_Value" Content=" Samples + Value" IsSelected="True"/>
-                                <ComboBoxItem x:Name="Addition_NSamples_Value_Samples" Content=" Value + Samples" IsSelected="False"/>
-                            </ComboBox>
-                            <Label FontSize="13" Padding="0" Content=" ): "/>
-                            <TextBox x:Name="Addition_TextBox_Math_NSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="79" Text=""/>
-                            <Button x:Name="Addition_Button_Math_NSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="Addition_Button_Math_NSamples_Click"/>
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="375"/>
+                            <ColumnDefinition Width="380"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Vertical" Grid.Column="0" VerticalAlignment="Top">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Label FontSize="13" Padding="0" Content="Addition ( "/>
+                                <ComboBox FontSize="13" Padding="0,0,0,0" Margin="0,1,0,0">
+                                    <ComboBoxItem x:Name="Addition_NSamples_Samples_Value" Content=" Samples + Value" IsSelected="True"/>
+                                    <ComboBoxItem x:Name="Addition_NSamples_Value_Samples" Content=" Value + Samples" IsSelected="False"/>
+                                </ComboBox>
+                                <Label FontSize="13" Padding="0" Content=" ): "/>
+                                <TextBox x:Name="Addition_TextBox_Math_NSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="79" Text=""/>
+                                <Button x:Name="Addition_Button_Math_NSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="Addition_Button_Math_NSamples_Click"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Label FontSize="13" Padding="0" Content="Subtraction ( "/>
+                                <ComboBox FontSize="13" Padding="3,0,0,0" Margin="0,1,0,0">
+                                    <ComboBoxItem x:Name="Subtraction_NSamples_Samples_Value" Content=" Samples - Value" IsSelected="True"/>
+                                    <ComboBoxItem x:Name="Subtraction_NSamples_Value_Samples" Content=" Value - Samples" IsSelected="False"/>
+                                </ComboBox>
+                                <Label FontSize="13" Padding="0" Content=" ): "/>
+                                <TextBox x:Name="Subtraction_TextBox_Math_NSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="79" Text=""/>
+                                <Button x:Name="Subtraction_Button_Math_NSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="Subtraction_Button_Math_NSamples_Click"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Label FontSize="13" Padding="0" Content="Multiplication ( "/>
+                                <ComboBox FontSize="13" Padding="3,0,0,0" Margin="0,1,0,0">
+                                    <ComboBoxItem x:Name="Multiplication_NSamples_Samples_Value" Content=" Samples * Value" IsSelected="True"/>
+                                    <ComboBoxItem x:Name="Multiplication_NSamples_Value_Samples" Content=" Value * Samples" IsSelected="False"/>
+                                </ComboBox>
+                                <Label FontSize="13" Padding="0" Content=" ): "/>
+                                <TextBox x:Name="Multiplication_TextBox_Math_NSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="79" Text=""/>
+                                <Button x:Name="Multiplication_Button_Math_NSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="Multiplication_Button_Math_NSamples_Click"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Label FontSize="13" Padding="0" Content="Division ( "/>
+                                <ComboBox FontSize="13" Padding="3,0,0,0" Margin="0,1,0,0">
+                                    <ComboBoxItem x:Name="Division_NSamples_Samples_Value" Content=" Samples / Value" IsSelected="True"/>
+                                    <ComboBoxItem x:Name="Division_NSamples_Value_Samples" Content=" Value / Samples" IsSelected="False"/>
+                                </ComboBox>
+                                <Label FontSize="13" Padding="0" Content=" ): "/>
+                                <TextBox x:Name="Division_TextBox_Math_NSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="79" Text=""/>
+                                <Button x:Name="Division_Button_Math_NSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="Division_Button_Math_NSamples_Click"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Label Content="% Error = |(Samples - Y) / Y| x 100: " FontSize="13" Padding="0"/>
+                                <TextBox x:Name="Percentage_Error_TextBox_NSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="79" Text=""/>
+                                <Button x:Name="Percentage_Error_Button_NSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="Percentage_Error_Button_NSamples_Click"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Label FontSize="13" Padding="0" Content="DB: "/>
+                                <TextBox x:Name="DB_1_Math_NSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="35" MaxWidth="35" Text="20"/>
+                                <Label FontSize="13" Padding="0" Content=" x log "/>
+                                <TextBox x:Name="DB_2_Math_NSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="35" MaxWidth="35" Text="10"/>
+                                <Label FontSize="13" Padding="0" Content=" (Samples / "/>
+                                <TextBox x:Name="DB_3_Math_NSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="40" MaxWidth="40" Text="1"/>
+                                <Label FontSize="13" Padding="0" Content=")"/>
+                                <Button x:Name="DB_Button_Math_NSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="DB_Button_Math_NSamples_Click"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Label FontSize="13" Padding="0" Content="DBM: "/>
+                                <TextBox x:Name="DBM_1_Math_NSamples" FontSize="12" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="25" MaxWidth="25" Text="10"/>
+                                <Label FontSize="12" Padding="0" Content=" x log "/>
+                                <TextBox x:Name="DBM_2_Math_NSamples" FontSize="12" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="25" MaxWidth="25" Text="10"/>
+                                <Label FontSize="12" Padding="0" Content=" ((Samples^2 / "/>
+                                <TextBox x:Name="DBM_3_Math_NSamples" FontSize="12" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="40" MaxWidth="40" Text="50"/>
+                                <Label FontSize="12" Padding="0" Content=") / "/>
+                                <TextBox x:Name="DBM_4_Math_NSamples" FontSize="12" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="40" MaxWidth="40" Text="0.001"/>
+                                <Label FontSize="12" Padding="0" Content=")"/>
+                                <Button x:Name="DBM_Button_Math_NSamples" FontSize="12" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="DBM_Button_Math_NSamples_Click"/>
+                            </StackPanel>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Label FontSize="13" Padding="0" Content="Subtraction ( "/>
-                            <ComboBox FontSize="13" Padding="3,0,0,0" Margin="0,1,0,0">
-                                <ComboBoxItem x:Name="Subtraction_NSamples_Samples_Value" Content=" Samples - Value" IsSelected="True"/>
-                                <ComboBoxItem x:Name="Subtraction_NSamples_Value_Samples" Content=" Value - Samples" IsSelected="False"/>
-                            </ComboBox>
-                            <Label FontSize="13" Padding="0" Content=" ): "/>
-                            <TextBox x:Name="Subtraction_TextBox_Math_NSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="79" Text=""/>
-                            <Button x:Name="Subtraction_Button_Math_NSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="Subtraction_Button_Math_NSamples_Click"/>
+                        <StackPanel Orientation="Vertical" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                                <Label FontSize="13" Padding="0" Content="N Samples (Start, End): "/>
+                                <TextBox x:Name="Start_Math_NSamples_TextBox" FontSize="13" Padding="0" HorizontalContentAlignment="Center" Width="79" Text=""/>
+                                <Label FontSize="13" Padding="0" Content=" , "/>
+                                <TextBox x:Name="End_Math_NSamples_TextBox" FontSize="13" Padding="0" HorizontalContentAlignment="Center" Width="79" Text=""/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="64,0,0,0">
+                                <Label FontSize="13" Padding="0" Content="Graph Title: "/>
+                                <TextBox x:Name="GraphTitle_TextBox_Math_NSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="115" Text=""/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="57,0,0,0">
+                                <Label FontSize="13" Padding="0" Content="Y-Axis Label: "/>
+                                <TextBox x:Name="YAxis_TextBox_Math_NSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="115" Text=""/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="57,1,0,0">
+                                <Label FontSize="13" Padding="0" Content="Graph Color: "/>
+                                <Rectangle x:Name="GraphColor_Preview_Math_NSamples" Width="25" Fill="DodgerBlue" Margin="0,0,0,0"/>
+                                <TextBox x:Name="Red_GraphColor_TextBox_Math_NSamples" Padding="0" Text="30"  HorizontalContentAlignment="Center" Width="25" Margin="5,0,0,0"/>
+                                <TextBox x:Name="Green_GraphColor_TextBox_Math_NSamples" Padding="0" Text="144"  HorizontalContentAlignment="Center" Width="25" Margin="5,0,0,0"/>
+                                <TextBox x:Name="Blue_GraphColor_TextBox_Math_NSamples" Padding="0" Text="255"  HorizontalContentAlignment="Center" Width="25"  Margin="5,0,0,0"/>
+                                <Button x:Name="GraphColor_SetButton_Math_NSamples" FontSize="13" Padding="0" Content="Set" Margin="5,0,0,0" BorderBrush="White" Width="30" Click="GraphColor_SetButton_Math_NSamples_Click"/>
+                                <Button x:Name="GraphColor_RandomizeButton_Math_NSamples" FontSize="13" Padding="0" Content="Randomize" BorderBrush="White" Margin="5,0,0,0" Width="70" Click="GraphColor_RandomizeButton_Math_NSamples_Click"/>
+                            </StackPanel>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Label FontSize="13" Padding="0" Content="Multiplication ( "/>
-                            <ComboBox FontSize="13" Padding="3,0,0,0" Margin="0,1,0,0">
-                                <ComboBoxItem x:Name="Multiplication_NSamples_Samples_Value" Content=" Samples * Value" IsSelected="True"/>
-                                <ComboBoxItem x:Name="Multiplication_NSamples_Value_Samples" Content=" Value * Samples" IsSelected="False"/>
-                            </ComboBox>
-                            <Label FontSize="13" Padding="0" Content=" ): "/>
-                            <TextBox x:Name="Multiplication_TextBox_Math_NSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="79" Text=""/>
-                            <Button x:Name="Multiplication_Button_Math_NSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="Multiplication_Button_Math_NSamples_Click"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Label FontSize="13" Padding="0" Content="Division ( "/>
-                            <ComboBox FontSize="13" Padding="3,0,0,0" Margin="0,1,0,0">
-                                <ComboBoxItem x:Name="Division_NSamples_Samples_Value" Content=" Samples / Value" IsSelected="True"/>
-                                <ComboBoxItem x:Name="Division_NSamples_Value_Samples" Content=" Value / Samples" IsSelected="False"/>
-                            </ComboBox>
-                            <Label FontSize="13" Padding="0" Content=" ): "/>
-                            <TextBox x:Name="Division_TextBox_Math_NSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="79" Text=""/>
-                            <Button x:Name="Division_Button_Math_NSamples" FontSize="13" Padding="0" Margin="5,0,0,0" Width="70"  BorderBrush="White" Content="Calculate" Click="Division_Button_Math_NSamples_Click"/>
-                        </StackPanel>
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right">
-                        <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
-                            <Label FontSize="13" Padding="0" Content="N Samples (Start, End): "/>
-                            <TextBox x:Name="Start_Math_NSamples_TextBox" FontSize="13" Padding="0" HorizontalContentAlignment="Center" Width="79" Text=""/>
-                            <Label FontSize="13" Padding="0" Content=" , "/>
-                            <TextBox x:Name="End_Math_NSamples_TextBox" FontSize="13" Padding="0" HorizontalContentAlignment="Center" Width="79" Text=""/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="64,0,0,0">
-                            <Label FontSize="13" Padding="0" Content="Graph Title: "/>
-                            <TextBox x:Name="GraphTitle_TextBox_Math_NSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="115" Text=""/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="57,0,0,0">
-                            <Label FontSize="13" Padding="0" Content="Y-Axis Label: "/>
-                            <TextBox x:Name="YAxis_TextBox_Math_NSamples" FontSize="13" Padding="-1" Margin="0,1,0,1" HorizontalContentAlignment="Center" Width="115" Text=""/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="57,1,0,0">
-                            <Label FontSize="13" Padding="0" Content="Graph Color: "/>
-                            <Rectangle x:Name="GraphColor_Preview_Math_NSamples" Width="25" Fill="DodgerBlue" Margin="0,0,0,0"/>
-                            <TextBox x:Name="Red_GraphColor_TextBox_Math_NSamples" Padding="0" Text="30"  HorizontalContentAlignment="Center" Width="25" Margin="5,0,0,0"/>
-                            <TextBox x:Name="Green_GraphColor_TextBox_Math_NSamples" Padding="0" Text="144"  HorizontalContentAlignment="Center" Width="25" Margin="5,0,0,0"/>
-                            <TextBox x:Name="Blue_GraphColor_TextBox_Math_NSamples" Padding="0" Text="255"  HorizontalContentAlignment="Center" Width="25"  Margin="5,0,0,0"/>
-                            <Button x:Name="GraphColor_SetButton_Math_NSamples" FontSize="13" Padding="0" Content="Set" Margin="5,0,0,0" BorderBrush="White" Width="30" Click="GraphColor_SetButton_Math_NSamples_Click"/>
-                            <Button x:Name="GraphColor_RandomizeButton_Math_NSamples" FontSize="13" Padding="0" Content="Randomize" BorderBrush="White" Margin="5,0,0,0" Width="70" Click="GraphColor_RandomizeButton_Math_NSamples_Click"/>
-                        </StackPanel>
-                    </StackPanel>
-                </Grid>
+                    </Grid>
+                </ScrollViewer>
             </TabItem>
             <TabItem x:Name="Histogram_Tab" Header="Histogram">
                 <Grid>

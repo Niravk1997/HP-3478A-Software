@@ -12,7 +12,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
-            <RowDefinition Height="130"/> 
+            <RowDefinition Height="130"/>
             <RowDefinition Height="65"/>
             <RowDefinition Height="93"/>
             <RowDefinition Height="78"/>
@@ -374,19 +374,19 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Border x:Name="VDC_Border" Grid.Row="0" Grid.Column="0" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
+                <Border x:Name="VDC_Border" Grid.Row="0" Grid.Column="0" BorderThickness="2" BorderBrush="#00CE30" Margin="10,0,10,0">
                     <Button x:Name="VDC_Button" BorderThickness="0" Click="VDC_Button_Click">
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <Label Content="&#x2393;" FontSize="30" Margin="0,-12,0,0"/>
-                            <Label Content="VDC" Margin="-7,0,0,0"/>
+                            <Label Content="&#x2393;" FontSize="30" Margin="0,-11,0,0"/>
+                            <Label Content="VDC" Margin="-7,2,0,0"/>
                         </StackPanel>
                     </Button>
                 </Border>
                 <Border x:Name="VAC_Border" Grid.Row="0" Grid.Column="1" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                     <Button x:Name="VAC_Button" Margin="0,0,0,0" BorderThickness="0" Click="VAC_Button_Click">
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="~" FontSize="30" Margin="0,-14,0,0"/>
-                            <Label Content="VAC" Margin="-7,0,0,0"/>
+                            <Label Content="~" FontSize="30" Margin="0,-12,0,0"/>
+                            <Label Content="VAC" Margin="-7,2,0,0"/>
                         </StackPanel>
                     </Button>
                 </Border>
@@ -409,16 +409,16 @@
                 <Border x:Name="ADC_Border" Grid.Row="0" Grid.Column="4" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                     <Button x:Name="ADC_Button" BorderThickness="0" Click="ADC_Button_Click">
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="&#x2393;" FontSize="30" Margin="0,-12,0,0"/>
-                            <Label Content="ADC" Margin="-7,0,0,0"/>
+                            <Label Content="&#x2393;" FontSize="30" Margin="0,-11,0,0"/>
+                            <Label Content="ADC" Margin="-7,2,0,0"/>
                         </StackPanel>
                     </Button>
                 </Border>
                 <Border x:Name="AAC_Border" Grid.Row="0" Grid.Column="5" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                     <Button x:Name="AAC_Button" BorderThickness="0" Click="AAC_Button_Click">
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="~" FontSize="30" Margin="0,-14,0,0"/>
-                            <Label Content="AAC" Margin="-7,0,0,0"/>
+                            <Label Content="~" FontSize="30" Margin="0,-12,0,0"/>
+                            <Label Content="AAC" Margin="-7,2,0,0"/>
                         </StackPanel>
                     </Button>
                 </Border>
@@ -442,24 +442,24 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Border x:Name="VDC_Auto_Border" Grid.Row="0" Grid.Column="0" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
+                        <Border x:Name="VDC_Auto_Border" Grid.Row="0" Grid.Column="0" BorderThickness="2" BorderBrush="#00CE30" Margin="10,0,10,0">
                             <Button x:Name="VDC_Auto_Button" BorderThickness="0" Click="VDC_Auto_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="Auto" Margin="0,-1,0,0"/>
+                                    <Label Content="Auto" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
                         <Border x:Name="VDC_30mV_Border" Grid.Row="0" Grid.Column="1" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                             <Button x:Name="VDC_30mV_Button" Margin="0,0,0,0" BorderThickness="0" Click="VDC_30mV_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="30 mV" Margin="0,-1,0,0"/>
+                                    <Label Content="30 mV" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
                         <Border x:Name="VDC_300mV_Border" Grid.Row="0" Grid.Column="2" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                             <Button x:Name="VDC_300mV_Button" BorderThickness="0" Click="VDC_300mV_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="300 mV" Margin="0,-1,0,0"/>
+                                    <Label Content="300 mV" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
@@ -473,14 +473,14 @@
                         <Border x:Name="VDC_30V_Border" Grid.Row="0" Grid.Column="4" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                             <Button x:Name="VDC_30V_Button" BorderThickness="0" Click="VDC_30V_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="30 V" Margin="0,-1,0,0"/>
+                                    <Label Content="30 V" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
                         <Border x:Name="VDC_300V_Border" Grid.Row="0" Grid.Column="5" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                             <Button x:Name="VDC_300V_Button" BorderThickness="0" Click="VDC_300V_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="300 V" Margin="0,-1,0,0"/>
+                                    <Label Content="300 V" Margin="2,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
@@ -501,35 +501,35 @@
                         <Border x:Name="VAC_Auto_Border" Grid.Row="0" Grid.Column="0" BorderThickness="2" BorderBrush="#00CE30" Margin="10,0,10,0">
                             <Button x:Name="VAC_Auto_Button" BorderThickness="0" Click="VAC_Auto_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="Auto" Margin="0,-1,0,0"/>
+                                    <Label Content="Auto" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
                         <Border x:Name="VAC_300mV_Border" Grid.Row="0" Grid.Column="1" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                             <Button x:Name="VAC_300mV_Button" BorderThickness="0" Click="VAC_300mV_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="300 mV" Margin="0,-1,0,0"/>
+                                    <Label Content="300 mV" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
                         <Border x:Name="VAC_3V_Border" Grid.Row="0" Grid.Column="2" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                             <Button x:Name="VAC_3V_Button" BorderThickness="0" Click="VAC_3V_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="3 V" Margin="0,-1,0,0"/>
+                                    <Label Content="3 V" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
                         <Border x:Name="VAC_30V_Border" Grid.Row="0" Grid.Column="3" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                             <Button x:Name="VAC_30V_Button" BorderThickness="0" Click="VAC_30V_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="30 V" Margin="0,-1,0,0"/>
+                                    <Label Content="30 V" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
                         <Border x:Name="VAC_300V_Border" Grid.Row="0" Grid.Column="4" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                             <Button x:Name="VAC_300V_Button" BorderThickness="0" Click="VAC_300V_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="300 V" Margin="0,-1,0,0"/>
+                                    <Label Content="300 V" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
@@ -553,56 +553,56 @@
                         <Border x:Name="Ohms_Auto_Border" Grid.Row="0" Grid.Column="0" BorderThickness="2" BorderBrush="#00CE30" Margin="10,0,10,0">
                             <Button x:Name="Ohms_Auto_Button" BorderThickness="0" Click="Ohms_Auto_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="Auto" Margin="0,-1,0,0"/>
+                                    <Label Content="Auto" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
                         <Border x:Name="Ohms_30_Border" Grid.Row="0" Grid.Column="1" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                             <Button x:Name="Ohms_30_Button" Margin="0,0,0,0" BorderThickness="0" Click="Ohms_30_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="30 Ω" Margin="0,-1,0,0"/>
+                                    <Label Content="30 Ω" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
                         <Border x:Name="Ohms_300_Border" Grid.Row="0" Grid.Column="2" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                             <Button x:Name="Ohms_300_Button" BorderThickness="0" Click="Ohms_300_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="300 Ω" Margin="0,-1,0,0"/>
+                                    <Label Content="300 Ω" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
                         <Border x:Name="Ohms_3K_Border" Grid.Row="0" Grid.Column="3" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                             <Button x:Name="Ohms_3K_Button" BorderThickness="0" Click="Ohms_3K_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="3K Ω" Margin="0,-1,0,0"/>
+                                    <Label Content="3K Ω" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
                         <Border x:Name="Ohms_30K_Border" Grid.Row="0" Grid.Column="4" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                             <Button x:Name="Ohms_30K_Button" BorderThickness="0" Click="Ohms_30K_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="30K Ω" Margin="0,-1,0,0"/>
+                                    <Label Content="30K Ω" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
                         <Border x:Name="Ohms_300K_Border" Grid.Row="0" Grid.Column="5" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                             <Button x:Name="Ohms_300K_Button" BorderThickness="0" Click="Ohms_300K_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="300K Ω" Margin="0,-1,0,0"/>
+                                    <Label Content="300K Ω" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
                         <Border x:Name="Ohms_3M_Border" Grid.Row="0" Grid.Column="6" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                             <Button x:Name="Ohms_3M_Button" BorderThickness="0" Click="Ohms_3M_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="3M Ω" Margin="0,-1,0,0"/>
+                                    <Label Content="3M Ω" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
                         <Border x:Name="Ohms_30M_Border" Grid.Row="0" Grid.Column="7" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                             <Button x:Name="Ohms_30M_Button" BorderThickness="0" Click="Ohms_30M_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="30M Ω" Margin="0,-1,0,0"/>
+                                    <Label Content="30M Ω" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
@@ -621,21 +621,21 @@
                         <Border x:Name="ADC_Auto_Border" Grid.Row="0" Grid.Column="0" BorderThickness="2" BorderBrush="#00CE30" Margin="10,0,10,0">
                             <Button x:Name="ADC_Auto_Button" BorderThickness="0" Click="ADC_Auto_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="Auto" Margin="0,-1,0,0"/>
+                                    <Label Content="Auto" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
                         <Border x:Name="ADC_300m_Border" Grid.Row="0" Grid.Column="1" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                             <Button x:Name="ADC_300m_Button" Margin="0,0,0,0" BorderThickness="0" Click="ADC_300m_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="300 mADC" Margin="0,-1,0,0"/>
+                                    <Label Content="300 mADC" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
                         <Border x:Name="ADC_3_Border" Grid.Row="0" Grid.Column="2" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                             <Button x:Name="ADC_3_Button" BorderThickness="0" Click="ADC_3_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="3 ADC" Margin="0,-1,0,0"/>
+                                    <Label Content="3 ADC" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
@@ -654,21 +654,21 @@
                         <Border x:Name="AAC_Auto_Border" Grid.Row="0" Grid.Column="0" BorderThickness="2" BorderBrush="#00CE30" Margin="10,0,10,0">
                             <Button x:Name="AAC_Auto_Button" BorderThickness="0" Click="AAC_Auto_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="Auto" Margin="0,-1,0,0"/>
+                                    <Label Content="Auto" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
                         <Border x:Name="AAC_300m_Border" Grid.Row="0" Grid.Column="1" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                             <Button x:Name="AAC_300m_Button" Margin="0,0,0,0" BorderThickness="0" Click="AAC_300m_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="300 mAAC" Margin="0,-1,0,0"/>
+                                    <Label Content="300 mAAC" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
                         <Border x:Name="AAC_3_Border" Grid.Row="0" Grid.Column="2" BorderThickness="2" BorderBrush="White" Margin="10,0,10,0">
                             <Button x:Name="AAC_3_Button" BorderThickness="0" Click="AAC_3_Button_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="3 AAC" Margin="0,-1,0,0"/>
+                                    <Label Content="3 AAC" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Border>
@@ -696,21 +696,21 @@
                             <Border x:Name="Digit_Three_Border" Grid.Row="0" Grid.Column="0" BorderThickness="2" BorderBrush="White" Margin="5,0,5,0">
                                 <Button x:Name="Digit_Three_Button" BorderThickness="0" Click="Digit_Three_Button_Click">
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="3½" FontSize="16" Margin="0,-2,0,0"/>
+                                        <Label Content="3½" FontSize="16" Margin="0,0,0,0"/>
                                     </StackPanel>
                                 </Button>
                             </Border>
                             <Border x:Name="Digit_Four_Border" Grid.Row="0" Grid.Column="1" BorderThickness="2" BorderBrush="White" Margin="5,0,5,0">
                                 <Button x:Name="Digit_Four_Button" Margin="0,0,0,0" BorderThickness="0" Click="Digit_Four_Button_Click">
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="4½" FontSize="16" Margin="0,-2,0,0"/>
+                                        <Label Content="4½" FontSize="16" Margin="0,0,0,0"/>
                                     </StackPanel>
                                 </Button>
                             </Border>
-                            <Border x:Name="Digit_Five_Border" Grid.Row="0" Grid.Column="2" BorderThickness="2" BorderBrush="White" Margin="5,0,5,0">
+                            <Border x:Name="Digit_Five_Border" Grid.Row="0" Grid.Column="2" BorderThickness="2" BorderBrush="#00CE30" Margin="5,0,5,0">
                                 <Button x:Name="Digit_Five_Button" BorderThickness="0" Click="Digit_Five_Button_Click">
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="5½" FontSize="16" Margin="0,-2,0,0"/>
+                                        <Label Content="5½" FontSize="16" Margin="0,0,0,0"/>
                                     </StackPanel>
                                 </Button>
                             </Border>
@@ -728,14 +728,14 @@
                             <Border x:Name="AutoZero_On_Border" Grid.Row="0" Grid.Column="0" BorderThickness="2" BorderBrush="#00CE30" Margin="5,0,5,0">
                                 <Button x:Name="AutoZero_On_Button" BorderThickness="0" Click="AutoZero_On_Button_Click">
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="On" Margin="0,-1,0,0"/>
+                                        <Label Content="On" Margin="0,0,0,0"/>
                                     </StackPanel>
                                 </Button>
                             </Border>
                             <Border x:Name="AutoZero_Off_Border" Grid.Row="0" Grid.Column="1" BorderThickness="2" BorderBrush="White" Margin="5,0,5,0">
                                 <Button x:Name="AutoZero_Off_Button" Margin="0,0,0,0" BorderThickness="0" Click="AutoZero_Off_Button_Click">
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Off" Margin="0,-1,0,0"/>
+                                        <Label Content="Off" Margin="0,0,0,0"/>
                                     </StackPanel>
                                 </Button>
                             </Border>
@@ -757,38 +757,38 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <Border x:Name="Trigger_Internal_Border" Grid.Row="0" Grid.Column="0" BorderThickness="2" BorderBrush="White" Margin="5,0,5,0">
+                            <Border x:Name="Trigger_Internal_Border" Grid.Row="0" Grid.Column="0" BorderThickness="2" BorderBrush="#00CE30" Margin="5,0,5,0">
                                 <Button x:Name="Trigger_Internal_Button" BorderThickness="0" Click="Trigger_Internal_Button_Click">
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Internal" Margin="0,-1,0,0"/>
+                                        <Label Content="Internal" Margin="0,0,0,0"/>
                                     </StackPanel>
                                 </Button>
                             </Border>
                             <Border x:Name="Trigger_External_Border" Grid.Row="0" Grid.Column="1" BorderThickness="2" BorderBrush="White" Margin="5,0,5,0">
                                 <Button x:Name="Trigger_External_Button" Margin="0,0,0,0" BorderThickness="0" Click="Trigger_External_Button_Click">
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="External" Margin="0,-1,0,0"/>
+                                        <Label Content="External" Margin="0,0,0,0"/>
                                     </StackPanel>
                                 </Button>
                             </Border>
                             <Border x:Name="Trigger_Single_Border" Grid.Row="0" Grid.Column="2" BorderThickness="2" BorderBrush="White" Margin="5,0,5,0">
                                 <Button x:Name="Trigger_Single_Button" BorderThickness="0" Click="Trigger_Single_Button_Click">
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Single" Margin="0,-1,0,0"/>
+                                        <Label Content="Single" Margin="0,0,0,0"/>
                                     </StackPanel>
                                 </Button>
                             </Border>
                             <Border x:Name="Trigger_Hold_Border" Grid.Row="0" Grid.Column="3" BorderThickness="2" BorderBrush="White" Margin="5,0,5,0">
                                 <Button x:Name="Trigger_Hold_Button" BorderThickness="0" Click="Trigger_Hold_Button_Click">
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Hold" Margin="0,-1,0,0"/>
+                                        <Label Content="Hold" Margin="0,0,0,0"/>
                                     </StackPanel>
                                 </Button>
                             </Border>
                             <Border x:Name="Trigger_Fast_Border" Grid.Row="0" Grid.Column="4" BorderThickness="2" BorderBrush="White" Margin="5,0,5,0">
                                 <Button x:Name="Trigger_Fast_Button" BorderThickness="0" Click="Trigger_Fast_Button_Click">
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Fast" Margin="0,-1,0,0"/>
+                                        <Label Content="Fast" Margin="0,0,0,0"/>
                                     </StackPanel>
                                 </Button>
                             </Border>
@@ -809,14 +809,14 @@
                             <Border x:Name="Display_On_Border" Grid.Row="0" Grid.Column="0" BorderThickness="2" BorderBrush="#00CE30" Margin="5,0,5,0">
                                 <Button x:Name="Display_On_Button" BorderThickness="0" Click="Display_On_Button_Click">
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="On" Margin="0,-1,0,0"/>
+                                        <Label Content="On" Margin="0,0,0,0"/>
                                     </StackPanel>
                                 </Button>
                             </Border>
                             <Border x:Name="Display_Off_Border" Grid.Row="0" Grid.Column="1" BorderThickness="2" BorderBrush="White" Margin="5,0,5,0">
                                 <Button x:Name="Display_Off_Button" Margin="0,0,0,0" BorderThickness="0" Click="Display_Off_Button_Click">
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Off" Margin="0,-1,0,0"/>
+                                        <Label Content="Off" Margin="0,0,0,0"/>
                                     </StackPanel>
                                 </Button>
                             </Border>
@@ -824,14 +824,14 @@
                             <Border x:Name="Display_Text_Border" Grid.Row="0" Grid.Column="3" BorderThickness="2" BorderBrush="White" Margin="-5,0,10,0">
                                 <Button x:Name="Display_Text_Button" BorderThickness="0" Click="Display_Text_Button_Click">
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Set" Margin="0,-1,0,0"/>
+                                        <Label Content="Set" Margin="0,0,0,0"/>
                                     </StackPanel>
                                 </Button>
                             </Border>
                             <Border x:Name="Display_Clear_Border" Grid.Row="0" Grid.Column="4" BorderThickness="2" BorderBrush="White" Margin="-5,0,5,0">
                                 <Button x:Name="Display_Clear_Button" BorderThickness="0" Click="Display_Clear_Button_Click">
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Clear" Margin="0,-1,0,0"/>
+                                        <Label Content="Clear" Margin="0,0,0,0"/>
                                     </StackPanel>
                                 </Button>
                             </Border>
@@ -909,7 +909,7 @@
                         </Border>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Grid.Row="1" Grid.Column="0">
-                        <Border x:Name="UpdateSpeed_Default_Set_Border" BorderThickness="2" BorderBrush="White" Margin="5,0,0,0">
+                        <Border x:Name="UpdateSpeed_Default_Set_Border" BorderThickness="2" BorderBrush="#00CE30" Margin="5,0,0,0">
                             <Button x:Name="UpdateSpeed_Default_Set_Button" Content="Set Default" Width="90"  Height="25" BorderThickness="0" Click="UpdateSpeed_Default_Set_Button_Click"/>
                         </Border>
                         <Border x:Name="UpdateSpeed_Fast_Set_Border" BorderThickness="2" BorderBrush="White" Margin="5,0,0,0">
