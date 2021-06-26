@@ -5,6 +5,8 @@
 
 #### [User Manual](https://github.com/Niravk1997/HP-3478A-Software/blob/main/User%20Manual/HP%203478A%20Software%20User%20Manual.pdf)
 
+#### [EEVblog forum post](https://www.eevblog.com/forum/testgear/hp-34401a-standalone-software/)
+
 #### [AR488 Adapter](https://github.com/Twilight-Logic/AR488)
 
 **Features:**
